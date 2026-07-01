@@ -30,10 +30,14 @@ public class Controller
     //token will be generated for this method
     //tested this on postman
     @PostMapping("/student")
+    //If you don't want the client to send any JSON
+    //Then don't use @RequestBody at all.
     public String postStudent(@RequestBody Student student) //The JSON data in the request body is
                                                           // converted into a Student object using
                                                           //  @RequestBody
     {
+        student.setId(1);
+        student.setName("Isha Parihariya!!");
         return "student added : " + "id : "+ student.getId() +" " +" name : "+student.getName();
     }
 
